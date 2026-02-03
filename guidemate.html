@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuideMate | Explore the World</title>
+    <script src="https://kit.fontawesome.com/ed5caa5a8f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="guidemate.css">
+</head>
+<body>
+
+    <div class="signup-wrapper">
+        <div class="main-card">
+            <div class="image-panel">
+                <div class="overlay"></div>
+                <div class="panel-content">
+                    <div class="brand-logo">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <span>GuideMate</span>
+                    </div>
+                    <div class="hero-text">
+                        <h1>Your next adventure starts here.</h1>
+                        <p>Join 50,000+ travelers discovering hidden gems across the globe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <div class="form-header">
+                    <h2>Create Account</h2>
+                    <p>Enter your details to become a GuideMate explorer.</p>
+                </div>
+
+                <form id="signup-form" action="tourist_signup.php" method="POST">
+                    <div class="form-grid">
+                        <div class="input-box">
+                            <label><i class="fa-regular fa-user"></i> First Name</label>
+                            <input type="text" name="first_name" placeholder="John" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Last Name</label>
+                            <input type="text" name="last_name" placeholder="Doe" required>
+                        </div>
+
+                        <div class="input-box full-width">
+                            <label><i class="fa-regular fa-envelope"></i> Email Address</label>
+                            <input type="email" name="email" placeholder="john.doe@travel.com" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label><i class="fa-solid fa-phone"></i> Contact</label>
+                            <input type="text" name="contact" placeholder="+63 9xx..." required>
+                        </div>
+
+                        <div class="input-box">
+                            <label><i class="fa-regular fa-id-badge"></i> Username</label>
+                            <input type="text" name="username" placeholder="jdoe_travels" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label><i class="fa-solid fa-lock"></i> Password</label>
+                            <input type="password" name="password" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Confirm Password</label>
+                            <input type="password" name="confirm_password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="role" value="tourist">
+                    
+                    <button type="submit" class="primary-btn">Begin Adventure</button>
+                    
+                    <p class="switch-link">
+                        Already have an account? <a href="signintourist.html">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
