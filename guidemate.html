@@ -32,55 +32,68 @@
                     <p>Enter your details to become a GuideMate explorer.</p>
                 </div>
 
-                <form id="signup-form" action="tourist_signup.php" method="POST">
-                    <div class="form-grid">
-                        <div class="input-box">
-                            <label><i class="fa-regular fa-user"></i> First Name</label>
-                            <input type="text" name="first_name" placeholder="John" required>
-                        </div>
+             <form id="signup-form" action="tourist_signup.php" method="POST">
+    <div class="role-selection-wrapper">
+        <label class="section-label">Register as:</label>
+        <div class="role-selector">
+            <button type="button" class="role-btn active" data-role="tourist">
+                <i class="fa-solid fa-person-walking-luggage"></i> Tourist
+            </button>
+            <button type="button" class="role-btn" data-role="admin">
+                <i class="fa-solid fa-user-shield"></i> Admin
+            </button>
+        </div>
+    </div>
 
-                        <div class="input-box">
-                            <label>Last Name</label>
-                            <input type="text" name="last_name" placeholder="Doe" required>
-                        </div>
+    <input type="hidden" name="role" id="user-role" value="tourist">
 
-                        <div class="input-box full-width">
-                            <label><i class="fa-regular fa-envelope"></i> Email Address</label>
-                            <input type="email" name="email" placeholder="john.doe@travel.com" required>
-                        </div>
+    <div class="form-grid">
+        <div class="input-box">
+            <label><i class="fa-regular fa-user"></i> First Name</label>
+            <input type="text" name="first_name" required>
+        </div>
 
-                        <div class="input-box">
-                            <label><i class="fa-solid fa-phone"></i> Contact</label>
-                            <input type="text" name="contact" placeholder="+63 9xx..." required>
-                        </div>
+        <div class="input-box">
+            <label>Last Name</label>
+            <input type="text" name="last_name" required>
+        </div>
 
-                        <div class="input-box">
-                            <label><i class="fa-regular fa-id-badge"></i> Username</label>
-                            <input type="text" name="username" placeholder="jdoe_travels" required>
-                        </div>
+        <div class="input-box full-width">
+            <label><i class="fa-regular fa-envelope"></i> Email Address</label>
+            <input type="email" name="email" required>
+        </div>
 
-                        <div class="input-box">
-                            <label><i class="fa-solid fa-lock"></i> Password</label>
-                            <input type="password" name="password" placeholder="••••••••" required>
-                        </div>
+        <div class="input-box">
+            <label><i class="fa-solid fa-phone"></i> Contact</label>
+            <input type="text" name="contact" placeholder="+63" required>
+        </div>
 
-                        <div class="input-box">
-                            <label>Confirm Password</label>
-                            <input type="password" name="confirm_password" placeholder="••••••••" required>
-                        </div>
-                    </div>
+        <div class="input-box">
+            <label><i class="fa-regular fa-id-badge"></i> Username</label>
+            <input type="text" name="username" required>
+        </div>
 
-                    <input type="hidden" name="role" value="tourist">
-                    
-                    <button type="submit" class="primary-btn">Begin Adventure</button>
-                    
-                    <p class="switch-link">
-                        Already have an account? <a href="signintourist.html">Sign In</a>
-                    </p>
-                </form>
+        <div class="input-box">
+            <label><i class="fa-solid fa-lock"></i> Password</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <div class="input-box">
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password" required>
+        </div>
+    </div>
+    
+    <button type="submit" class="primary-btn">Begin Adventure</button>
+    
+    <p class="switch-link">
+        Already have an account? <a href="signintourist.html">Sign In</a>
+    </p>
+</form>
             </div>
         </div>
     </div>
+    
 
 </body>
 </html>

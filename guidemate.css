@@ -169,3 +169,46 @@ input:focus {
     .image-panel { display: none; }
     .form-panel { padding: 40px 25px; }
 }
+.role-selection-wrapper {
+    margin-bottom: 25px;
+}
+
+.section-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.role-selector {
+    display: flex;
+    gap: 12px;
+}
+
+.role-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #eee;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #666;
+}
+
+.role-btn.active {
+    border-color: #007bff; /* Change to your primary brand color */
+    background: #f0f7ff;
+    color: #007bff;
+}
+
+.role-btn:hover:not(.active) {
+    border-color: #ccc;
+}
