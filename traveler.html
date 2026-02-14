@@ -2,43 +2,184 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tourist Dashboard - Cebu</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Cebu | GuideMate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        :root {
+            --cebu-blue: #0984e3;
+            --cebu-gold: #fdcb6e;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: #f8f9fa;
+            color: #2d3436;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: white;
+            padding: 15px 5% ;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--cebu-blue); }
+
+        /* --- Hero Search --- */
+        .hero-search {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .search-bar {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            width: 80%;
+            max-width: 600px;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .search-bar input {
+            border: none;
+            padding: 10px 20px;
+            flex: 1;
+            border-radius: 50px;
+            outline: none;
+        }
+
+        .search-btn {
+            background: var(--cebu-blue);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* --- Destination Grid --- */
+        .section-container { padding: 50px 10%; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .dest-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dest-card:hover { transform: translateY(-10px); }
+
+        .dest-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .dest-info { padding: 20px; }
+        .dest-info h3 { margin: 0; font-size: 1.2rem; }
+        .dest-info p { font-size: 0.85rem; color: #636e72; }
+
+        .price-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--cebu-gold);
+            padding: 5px 12px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.8rem;
+        }
+
+        .logout-link { color: #d63031; font-weight: 600; cursor: pointer; margin-left: 20px; }
+    </style>
 </head>
-<body class="theme-tourist">
+<body>
+
     <nav>
-        <div class="logo">GuideMate 🎒</div>
-        <div class="user-profile">Hello, Traveler!</div>
+        <div class="logo">GuideMate 🌊</div>
+        <div style="display: flex; align-items: center;">
+            <span style="font-weight: 600;">My Bookings</span>
+            <span class="logout-link" onclick="location.href='index.html'">LOGOUT</span>
+        </div>
     </nav>
 
-    <div class="container">
-        <header class="hero">
-            <h1>Explore the Queen City of the South</h1>
-            <p>Your next Cebu adventure starts here.</p>
-        </header>
+    <header class="hero-search">
+        <h1 style="font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">Experience Cebu</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Book verified local guides for your next island getaway.</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Where in Cebu do you want to go?">
+            <button class="search-btn">Find Guides</button>
+        </div>
+    </header>
 
+    <div class="section-container">
+        <h2 style="font-weight: 800;">Popular Cebu Destinations</h2>
         <div class="grid">
-            <div class="card">
-                <div class="tag">Highlands</div>
-                <h3>Sirao Flower Garden</h3>
-                <p>Visit the "Little Amsterdam" of Cebu and take photos at the giant hand.</p>
-                <button class="btn-book">Book Tour</button>
+            
+            <div class="dest-card">
+                <div class="price-tag">₱1,500 / pax</div>
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="dest-info">
+                    <h3>Moalboal Sardine Run</h3>
+                    <p>Swim with millions of sardines and sea turtles in the crystal clear waters of Moalboal.</p>
+                </div>
             </div>
-            <div class="card">
-                <div class="tag">History</div>
-                <h3>Magellan's Cross</h3>
-                <p>Explore the birthplace of Christianity in the Philippines.</p>
-                <button class="btn-book">Book Tour</button>
+
+            <div class="dest-card">
+                <div class="price-tag">₱2,200 / pax</div>
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1580019542155-247062e19ce4?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="dest-info">
+                    <h3>Oslob Whale Shark</h3>
+                    <p>A once-in-a-lifetime encounter with the gentle giants of the ocean in Tan-awan, Oslob.</p>
+                </div>
             </div>
-            <div class="card">
-                <div class="tag">Adventure</div>
-                <h3>Kawasan Falls</h3>
-                <p>Go canyoneering in the world-famous turquoise waters of Badian.</p>
-                <button class="btn-book">Book Tour</button>
+
+            <div class="dest-card">
+                <div class="price-tag">₱800 / pax</div>
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="dest-info">
+                    <h3>Historical City Tour</h3>
+                    <p>Visit Magellan's Cross, Fort San Pedro, and the Basilica Minore del Sto. Niño.</p>
+                </div>
             </div>
+
         </div>
     </div>
-    <script>feather.replace();</script>
+
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
