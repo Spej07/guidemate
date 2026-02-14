@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Spotlight | Cebu AdventureSync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        :root {
+            --accent: #27ae60;
+            --glass: rgba(255, 255, 255, 0.9);
+            --dark-glass: rgba(0, 0, 0, 0.7);
+            --danger: #e74c3c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1542614391-42cb50bc100f?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: var(--dark-glass);
+            backdrop-filter: blur(15px);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links span {
+            margin: 0 15px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links span:hover {
+            color: var(--accent);
+        }
+
+        /* --- Logout Button Style --- */
+        .logout-btn {
+            color: #ff7675 !important;
+            border: 1px solid rgba(255, 118, 117, 0.4);
+            padding: 6px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease !important;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 118, 117, 0.15);
+            color: #ff4757 !important;
+            border-color: #ff4757;
+            transform: translateY(-1px);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 100px 10%;
+            min-height: 35vh;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin: 10px 0;
+            font-weight: 800;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.6);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* --- Grid Layout --- */
+        .container {
+            padding: 0 5% 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- Glassmorphism Card Design --- */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 35px;
+            color: #1a2a3a;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+
+        .icon-box {
+            background: #e8f5ed;
+            width: 65px;
+            height: 65px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent);
+        }
+
+        /* --- Task Specific Card --- */
+        .task-card {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .task-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary { background: var(--accent); color: white; margin-right: 12px; }
+        .btn-outline { background: transparent; border: 2px solid #1a2a3a; color: #1a2a3a; }
+        .btn-danger { background: var(--danger); color: white; width: 100%; margin-top: 20px; }
+
+        .btn:hover { 
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        h2.section-title {
+            grid-column: 1 / -1;
+            font-size: 2.2rem;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+            font-weight: 800;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            nav { padding: 15px 25px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" style="font-weight: 800; font-size: 1.3rem; letter-spacing: 1px;">GuideMate 🌴</div>
+        <div class="nav-links">
+            <span>DASHBOARD</span>
+            <span>MY TOURS</span>
+            <span>GUESTS</span>
+            <span class="logout-btn" onclick="handleLogout()">
+                <i data-feather="log-out" style="width: 14px;"></i> LOGOUT
+            </span>
+        </div>
+        <div style="font-size: 0.9rem; background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 10px;">
+            Guide: <b>John Lloyd Noya</b>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span style="font-weight: 600; letter-spacing: 3px; color: #51ff9a; text-transform: uppercase;">Current Assignment</span>
+        <h1>CANYONEERING IN BADIAN</h1>
+        <p>Your group of 12 travelers is ready. Ensure all safety gear is double-checked before the first cliff jump at 9:30 AM. Stay hydrated and lead the way!</p>
+        <div>
+            <button class="btn btn-primary" style="background: white; color: var(--accent);">ACTIVATE GPS</button>
+            <button class="btn btn-primary" style="background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(5px);">GUEST MANIFEST</button>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="glass-card">
+            <div class="icon-box"><i data-feather="calendar"></i></div>
+            <h3 style="margin-top: 0;">My Schedule</h3>
+            <p>You have 3 upcoming tours this week including the Simala Shrine pilgrimage.</p>
+            <button class="btn btn-outline" style="width: 100%;">VIEW ALL</button>
+        </div>
+
+        <div class="glass-card">
+            <div class="icon-box"><i data-feather="dollar-sign"></i></div>
+            <h3 style="margin-top: 0;">Incentives</h3>
+            <p>Current earnings: <b style="color: var(--accent); font-size: 1.2rem;">₱4,500</b> from tips and bonuses this week.</p>
+            <button class="btn btn-outline" style="width: 100%;">PAYOUT INFO</button>
+        </div>
+
+        <h2 class="section-title">Detailed Daily Tasks</h2>
+
+        <div class="glass-card task-card">
+            <div class="task-header">
+                <span style="font-weight: 800; color: var(--accent); font-size: 1.1rem;">08:00 AM</span>
+                <span style="font-size: 0.75rem; background: #f0f0f0; padding: 4px 10px; border-radius: 6px; font-weight: 600; color: #666;">UPCOMING</span>
+            </div>
+            <h3 style="margin: 0 0 10px 0;">Bantayan Island Hopping</h3>
+            <p style="margin: 5px 0;"><i data-feather="map-pin" style="width: 16px; vertical-align: middle; margin-right: 5px;"></i> Sta. Fe Port Meeting Point</p>
+            <p style="margin: 5px 0;"><i data-feather="users" style="width: 16px; vertical-align: middle; margin-right: 5px;"></i> 8 Travelers (International Group)</p>
+            <div style="display: flex; gap: 12px; margin-top: 20px;">
+                <button class="btn btn-primary" style="flex: 1; margin-right: 0;">Check-in</button>
+                <button class="btn btn-outline" style="flex: 1;">Contact</button>
+            </div>
+        </div>
+
+        <div class="glass-card task-card">
+            <div class="icon-box" style="margin: 0 0 15px 0; background: #fff5f5; color: #e74c3c;"><i data-feather="shield"></i></div>
+            <h3 style="margin: 0 0 10px 0;">SOS / Support</h3>
+            <p>Direct priority line to Tourism Admin and local emergency responders for Badian district.</p>
+            <button class="btn btn-danger">INITIATE EMERGENCY CALL</button>
+        </div>
+
+    </div>
+
+    <script>
+        feather.replace();
+
+        function handleLogout() {
+            // Confirm with the user before logging out
+            if (confirm("Are you sure you want to log out, John Lloyd?")) {
+                // Redirect back to login page
+                window.location.href = "index.html"; 
+            }
+        }
+    </script>
+</body>
+</html>
