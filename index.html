@@ -1,216 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Guidemate</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cebu Explorer | Tourist Spots</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:white;
+}
+
+nav h2{
+    color:#009966;
+    font-weight:800;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li{
+    cursor:pointer;
+    font-weight:500;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:60px 20px 30px;
+}
+
+.hero h1{
+    font-size:40px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.search-bar{
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.search-bar input{
+    width:400px;
+    padding:12px;
+    border-radius:30px 0 0 30px;
+    border:1px solid #ccc;
+    outline:none;
+}
+
+.search-bar button{
+    padding:12px 25px;
+    border:none;
+    background:#00cc66;
+    color:white;
+    border-radius:0 30px 30px 0;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* FEATURED SECTION */
+.featured{
+    width:80%;
+    margin:40px auto;
+    background:#00cc66;
+    border-radius:15px;
+    display:flex;
+    overflow:hidden;
+    color:white;
+}
+
+.featured img{
+    width:50%;
+    object-fit:cover;
+}
+
+.featured-content{
+    padding:40px;
+    width:50%;
+}
+
+.featured-content h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.featured-content p{
+    margin-bottom:20px;
+}
+
+.featured-content button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:black;
+    color:white;
+}
+
+/* CATEGORIES */
+.categories{
+    width:80%;
+    margin:50px auto;
+}
+
+.categories h3{
+    margin-bottom:20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+}
+
+.card{
+    position:relative;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h4{
+    position:absolute;
+    bottom:10px;
+    left:15px;
+    color:white;
+    font-size:18px;
+    background:rgba(0,0,0,0.5);
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+</style>
 </head>
 <body>
 
+<!-- NAVIGATION -->
+<nav>
+    <h2>CebuExplorer</h2>
+    <ul>
+        <li>Discover</li>
+        <li>Tour Guides</li>
+        <li>Ratings</li>
+        <li>Login</li>
+    </ul>
+</nav>
 
-<header class="navbar">
-    <div class="logo">Guidemate</div>
-
-    <div class="nav-right">
-        <span>USD (₱)</span>
-        <span>♡ Wishlists</span>
-        <span>Help</span>
-        <a href="signintourist.html" class="login-btn">Login</a>
-    </div>
-</header>
-
-
-
+<!-- HERO -->
 <section class="hero">
-    <div class="hero-overlay">
-        <h1>Customizable Private Tours with Local Tour Guides</h1>
-        <p>
-            Choose Local Tour Guides at the Destination of Your Choice.
-            Simply Message Them To Personalize Your Tour!
-        </p>
-
-        <form action="book.php" method="GET" class="hero-search">
-            <input type="text" name="destination" placeholder="Where to?" required>
-            <button type="submit">Search</button>
-        </form>
+    <h1>Where to in Cebu?</h1>
+    <div class="search-bar">
+        <input type="text" placeholder="Search beaches, mountains, waterfalls...">
+        <button>Search</button>
     </div>
 </section>
 
-
-<section class="features">
-    <div class="feature">
-        <h3>All Tours Customizable</h3>
-        <p>Start by messaging your guide</p>
-    </div>
-
-    <div class="feature">
-        <h3>100% Private Tours</h3>
-        <p>Just you and your local tour guide</p>
-    </div>
-
-    <div class="feature">
-        <h3>Quality Assured Guides</h3>
-        <p>Screened and verified via interviews</p>
+<!-- FEATURED -->
+<section class="featured">
+    <img src="https://images.unsplash.com/photo-1588412079929-790b6e0a0a4e" alt="Kawasan Falls">
+    <div class="featured-content">
+        <h2>Explore the Beauty of Cebu</h2>
+        <p>Discover breathtaking waterfalls, white sand beaches, diving spots, and rich historical landmarks around Cebu.</p>
+        <button>Explore Now</button>
     </div>
 </section>
 
-
-<section class="destinations">
-    <h2>Popular Philippine Tour Destinations</h2>
-    <div class="red-line"></div>
-
-    <div class="destination-grid">
-        <div class="destination-card">
-            <img src="borac.jpg">
-            <p>Boracay</p>
+<!-- CATEGORIES -->
+<section class="categories">
+    <h3>Find Cebu Tourist Spots by Category</h3>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1549880181-56a44cf4a9a7">
+            <h4>Beaches</h4>
         </div>
-        <div class="destination-card">
-            <img src="palawan.jpg">
-            <p>Palawan</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+            <h4>Mountains</h4>
         </div>
-        <div class="destination-card">
-            <img src="cebu.jpg">
-            <p>Cebu</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1593642532871-8b12e02d091c">
+            <h4>Waterfalls</h4>
         </div>
-        <div class="destination-card">
-            <img src="bohol.jpg">
-            <p>Bohol</p>
-        </div>
-        <div class="destination-card">
-            <img src="siargao.jpg">
-            <p>Siargao</p>
-        </div>
-        <div class="destination-card">
-            <img src="baguio.webp">
-            <p>Baguio</p>
-        </div>
-        <div class="destination-card">
-            <img src="vigan.webp">
-            <p>Vigan</p>
-        </div>
-        <div class="destination-card">
-            <img src="iloilo.jpg">
-            <p>Iloilo</p>
-        </div>
-    </div>
-
-    <button class="view-btn">View All Philippine Destinations</button>
-</section>
-
-
-<section class="guides">
-    <h2>Popular Tour Guides in the Philippines</h2>
-    <div class="red-line"></div>
-
-    <div class="guide-grid">
-        <div class="guide-card">
-            <img src="noya.jfif">
-            <h4>John Lloyd Noya</h4>
-            <p>📍 Boracay</p>
-            <p>⭐ 4.9 (320 reviews)</p>
-        </div>
-
-        <div class="guide-card">
-            <img src="noya1.jfif">
-            <h4>Noya</h4>
-            <p>📍 Palawan</p>
-            <p>⭐ 4.8 (280 reviews)</p>
-        </div>
-
-        <div class="guide-card">
-            <img src="noya.jfif">
-            <h4>Noya</h4>
-            <p>📍 Cebu</p>
-            <p>⭐ 4.9 (410 reviews)</p>
-        </div>
-
-        <div class="guide-card">
-            <img src="noya3.jfif">
-            <h4>Noya</h4>
-            <p>📍 Bohol</p>
-            <p>⭐ 4.7 (190 reviews)</p>
-        </div>
-
-        
-        <div class="guide-card">
-            <img src="noya3.jfif">
-            <h4>Noya</h4>
-            <p>📍 Bohol</p>
-            <p>⭐ 4.7 (190 reviews)</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29">
+            <h4>Historical Sites</h4>
         </div>
     </div>
 </section>
+<!-- EXPERIENCES SECTION -->
+<section class="experiences">
+    <h2>Explore experiences near Cebu City</h2>
+    <p>Can’t-miss picks near you</p>
 
+    <div class="experience-container">
 
-<section class="guides">
-    <h2>New Tour Guides</h2>
-    <div class="red-line"></div>
-
-    <div class="guide-grid">
-        <div class="guide-card">
-            <img src="pacquiao.jfif">
-            <h4>Pacquiao</h4>
-            <p>📍 Siargao</p>
-            <p>⭐ New</p>
+        <!-- CARD 1 -->
+        <div class="experience-card">
+            <div class="heart">♡</div>
+            <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7">
+            <h4>Oslob Whale Shark & Moalboal Sardine Run</h4>
+            <div class="rating">
+                ⭐ 4.9 (76)
+            </div>
+            <p class="price">from ₱6,747 per adult</p>
         </div>
 
-        <div class="guide-card">
-            <img src="christian.jfif">
-            <h4>Christian</h4>
-            <p>📍 Baguio</p>
-            <p>⭐ New</p>
+        <!-- CARD 2 -->
+        <div class="experience-card">
+            <div class="heart">♡</div>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+            <h4>Mactan Island Hopping with Lunch</h4>
+            <div class="rating">
+                ⭐ 4.8 (73)
+            </div>
+            <p class="price">from ₱5,075 per adult</p>
         </div>
 
-         <div class="guide-card">
-            <img src="christian.jfif">
-            <h4>Christian</h4>
-            <p>📍 Baguio</p>
-            <p>⭐ New</p>
+        <!-- CARD 3 -->
+        <div class="experience-card">
+            <div class="heart">♡</div>
+            <img src="https://images.unsplash.com/photo-1544551763-7ef42067b8a4">
+            <h4>Bohol Countryside Day Tour</h4>
+            <div class="rating">
+                ⭐ 4.6 (65)
+            </div>
+            <p class="price">from ₱8,657 per adult</p>
         </div>
 
-         <div class="guide-card">
-            <img src="christian.jfif">
-            <h4>Christian</h4>
-            <p>📍 Baguio</p>
-            <p>⭐ New</p>
+        <!-- CARD 4 -->
+        <div class="experience-card">
+            <div class="heart">♡</div>
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+            <h4>Cebu City Historical Group Tour</h4>
+            <div class="rating">
+                ⭐ 4.5 (33)
+            </div>
+            <p class="price">from ₱4,590 per adult</p>
         </div>
 
-         <div class="guide-card">
-            <img src="christian.jfif">
-            <h4>Christian</h4>
-            <p>📍 Baguio</p>
-            <p>⭐ New</p>
-        </div>
     </div>
 </section>
 
-
-<section class="reviews">
-    <h2>Traveler Reviews</h2>
-    <div class="red-line"></div>
-
-    <div class="review-grid">
-        <div class="review-card">
-            <p>⭐⭐⭐⭐⭐</p>
-            <p>“Our Boracay guide was amazing! Very friendly and knowledgeable.”</p>
-            <small>— Alex, USA</small>
+<!-- ARTICLE SECTION -->
+<section class="articles">
+    <div class="article-box">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+        <div class="article-content">
+            <h3>The Ultimate Cebu Travel Guide</h3>
+            <p>Discover waterfalls, beaches, diving spots, and hidden gems around Cebu.</p>
         </div>
-
-        <div class="review-card">
-            <p>⭐⭐⭐⭐⭐</p>
-            <p>“Palawan tour was unforgettable. Highly recommended!”</p>
-            <small>— Sophie, UK</small>
-        </div>
-
-        <div class="review-card">
-            <p>⭐⭐⭐⭐</p>
-            <p>“Cebu city tour was fun and well organized.”</p>
-            <small>— Daniel, AU</small>
-        </div>
+        <button>Read now</button>
     </div>
 </section>
 
+<!-- PROMO SECTION -->
+<section class="promo">
+    <div class="promo-box">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
+        <div class="promo-content">
+            <h3>Experience Cebu Like Never Before</h3>
+            <p>Book guided tours with verified ratings and trusted local navigators.</p>
+        </div>
+        <button>View now</button>
+    </div>
+</section>
+    
 
-<script src="script.js"></script>
 </body>
 </html>
